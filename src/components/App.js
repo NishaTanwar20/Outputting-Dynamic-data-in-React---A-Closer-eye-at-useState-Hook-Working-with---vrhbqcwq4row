@@ -4,7 +4,7 @@ const App = () => {
   //code here
   // const [name , setName] = useState("");
   const name = useRef("");
-  const [finalName, setFinalName] = useState("_______");
+  const [finalName, setFinalName] = useState("");
 
   const handleInput = (e) => {
     name.current = e.target.value;
