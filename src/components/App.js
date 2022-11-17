@@ -1,15 +1,33 @@
-import React,{useState,useEffect} from 'react'
-import '../styles/App.css';
+import React, { useState, useEffect, useRef } from "react";
+import "../styles/App.css";
 const App = () => {
-//code here
+  //code here
+  // const [name , setName] = useState("");
+  const name = useRef("");
+  const [finalName, setFinalName] = useState("_______");
+
+  const handleInput = (e) => {
+    name.current = e.target.value;
+    // setName(e.target.value);
+  };
+  const handleClick = () => {
+    setFinalName(name.current);
+    // setFinalName(name);
+  };
+
   return (
     <div id="main">
-      <input id='input' onChange={}></input>
-      <button id='button' onClick={}>Click</button>
-      <p id='text'> Hello my name is ____ and I study at Newton School</p>
+      <input id="input" ref={name} onChange={handleInput}></input>
+      {/* <input id="input" value={finalName} onChange={handleInput}></input> */}
+      <button id="button" onClick={handleClick}>
+        Click
+      </button>
+      <p id="text">
+        Hello my name is {finalName || "_______"} and I study at Newton School
+        {/* Hello my name is {finalName} and I study at Newton School */}
+      </p>
     </div>
-  )
-}
-
+  );
+};
 
 export default App;
