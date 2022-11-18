@@ -23,8 +23,8 @@ const App = () => {
         Click
       </button>
       <p id="text">
-        {/* Hello my name is {finalName || "_______"} and I study at Newton School */}
-        Hello my name is {finalName} and I study at Newton School
+        Hello my name is {finalName || "_______"} and I study at Newton School
+        {/* Hello my name is {finalName} and I study at Newton School */}
       </p>
     </div>
   );
