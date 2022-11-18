@@ -4,7 +4,7 @@ const App = () => {
   //code here
   // const [name , setName] = useState("");
   const name = useRef("");
-  const [finalName, setFinalName] = useState("");
+  const [finalName, setFinalName] = useState("________");
 
   const handleInput = (e) => {
     name.current = e.target.value;
@@ -23,8 +23,8 @@ const App = () => {
         Click
       </button>
       <p id="text">
-        Hello my name is {finalName || "_______"} and I study at Newton School
-        {/* Hello my name is {finalName} and I study at Newton School */}
+        {/* Hello my name is {finalName || "_______"} and I study at Newton School */}
+        Hello my name is {finalName} and I study at Newton School
       </p>
     </div>
   );
