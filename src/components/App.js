@@ -1,20 +1,24 @@
 import React, { useState, useEffect ,useRef} from "react";
 import "../styles/App.css";
 const App = () => {
-  //code here
-  const name = useRef("");
-  const [finalName, setFinalName] = useState("________");
 
+  // const name = useRef("");
+  const [name , setName] = useState("");
+  const [finalName, setFinalName] = useState("________");
+ 
   const handleInput = (e) => {
-    name.current = e.target.value;
+    // name.current = e.target.value;
+    setName(e.target.value);
   };
   const handleClick = () => {
-    setFinalName(name.current);
-  };
+    // setFinalName(name.current);
+    setFinalName(name);
+  }; 
 
-  return (
+
+return (
     <div id="main">
-      <input id="input" ref={name} onChange={handleInput}></input>
+      <input id="input" name={name} onChange={handleInput}></input>
       <button id="button" onClick={handleClick}>
         Click
       </button>
